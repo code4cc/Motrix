@@ -58,3 +58,7 @@ jobs:
           API_KEY_ID: ${{ secrets.api_key_id }}
           API_KEY_ISSUER_ID: ${{ secrets.api_key_issuer_id }}
           SKIP_NOTARIZE: ${{ secrets.skip_notarize == 'true' || !startsWith(github.ref, 'refs/tags/v') }}
+      - name : Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Motrix-Setup-1.6.12.exe
